@@ -1,0 +1,8 @@
+{
+  "name": "ClojureScript Console",
+  "version": "0.1",
+  "description": "Chrome developer tool addition, allowing the evaluation of ClojureScript code directly in the browser.",
+  "devtools_page": "cljsconsole.html",
+  "manifest_version": 2
+}
+
