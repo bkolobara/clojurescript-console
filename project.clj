@@ -1,7 +1,7 @@
 (defproject cljsconsole "0.1.0"
   :description "An extension to the Chrome developer tools allowing the evaluation of ClojureScript
                 code directly in the browser."
-  :url "https://github.com/bkolobara/cljsconsole"
+  :url "https://github.com/bkolobara/clojurescript-console"
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :dependencies [[org.clojure/clojure "1.5.1"]]
