@@ -1,0 +1,33 @@
+#parent {
+    overflow: hidden;
+    background: yellow;
+    display: table;
+    width: 100%;
+}
+
+.left {
+    display: table-cell;
+    padding: 0 5px;
+}
+
+.middle {
+    display: table-cell;
+    background: blue;
+    width: 100%;
+}
+
+.middle input {
+    width: 100%;
+}
+
+.right {
+    background: red;
+    padding: 0 5px;
+    display: table-cell;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
