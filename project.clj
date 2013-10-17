@@ -4,7 +4,8 @@
   :url "https://github.com/bkolobara/clojurescript-console"
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
-  :dependencies [[org.clojure/clojure "1.5.1"]]
+  :dependencies [[org.clojure/clojure "1.5.1"]
+                 [enfocus "2.0.0"]]
   :plugins [[lein-cljsbuild "0.3.3"]]
   :cljsbuild {
     :builds [{
