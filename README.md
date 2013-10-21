@@ -3,7 +3,7 @@
 Extension to the Chrome developer tools allowing the evaluation of ClojureScript code 
 directly in the browser.
 
-Still just and experiment!
+Still just an experiment!
 
 ## License
 
