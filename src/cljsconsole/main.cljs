@@ -1,8 +1,6 @@
-(ns cljsconsole.core
-  (:require [enfocus.core :as ef]))
+(ns main)
 
 (js/chrome.devtools.panels.create "ClojureScript"
                                   "clojure-logo.png"
                                   "panel.html")
-
 

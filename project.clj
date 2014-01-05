@@ -5,13 +5,19 @@
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :dependencies [[org.clojure/clojure "1.5.1"]
-                 [enfocus "2.0.0"]]
-  :plugins [[lein-cljsbuild "0.3.3"]]
+                 [org.clojure/clojurescript "0.0-2134"]
+                 [org.clojure/core.async "0.1.256.0-1bf8cf-alpha"] 
+                 [om "0.1.4"]]
+  :plugins [[lein-cljsbuild "1.0.1"]]
   :cljsbuild {
-    :builds [{
-      :source-paths ["src"]
-      :compiler {
-        :output-to "dist/chrome/cljsconsole.js"
-        :optimizations :whitespace
-        :pretty-print true}}]})
+    :builds [{:source-paths ["src/cljsconsole"]
+              :compiler {
+                :output-to "dist/chrome/cljsconsole.js"
+                :optimizations :whitespace}}
+             {:source-paths ["src/panel"]
+              :compiler {
+                :output-to "dist/chrome/panel.js"
+                :optimizations :whitespace
+                :preamble ["react/react.min.js"]
+                :externs ["react/externs/react.js"]}}]})
 

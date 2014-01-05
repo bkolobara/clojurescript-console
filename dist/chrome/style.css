@@ -1,4 +1,4 @@
-#parent {
+.console {
     overflow: hidden;
     background: yellow;
     display: table;
@@ -18,6 +18,11 @@
 
 .middle input {
     width: 100%;
+}
+
+.expressionForm {
+    margin: 0;
+    padding: 0;
 }
 
 .right {
