@@ -1,104 +1,114 @@
 body {
-    cursor: default;
-    font-size: 12px;
-    color: rgb(48, 57, 66);
-    font-family: Ubuntu, Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+  cursor: default;
+  font-size: 12px;
+  color: rgb(48, 57, 66);
+  font-family: Ubuntu, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 #console {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 .console-element {
-    position: absolute;
-    z-index: 0;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    padding: 2px 0;
-    overflow-y: scroll;
-    word-wrap: break-word;
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 2px 0;
+  overflow-y: scroll;
+  word-wrap: break-word;
 }
 
 .prompt-left {
-    display: table-cell;
-    padding: 0 5px;
+  display: table-cell;
+  color: rgb(17, 85, 204);
+  padding: 0 5px;
 }
 
 .prompt-middle {
-    display: table-cell;
-    width: 100%;
+  display: table-cell;
+  width: 100%;
 }
 
 *:focus {
-    outline: 0;
+   outline: 0;
 }
 
 .prompt-middle input {
-    border: 0px solid;
-    font-size: 12px;
-    color: rgb(48, 57, 66);
-    font-family: Ubuntu, Arial, sans-serif;
-    width: 100%;
+  border: 0px solid;
+  font-size: 12px;
+  color: rgb(48, 57, 66);
+  font-family: Ubuntu, Arial, sans-serif;
+  width: 100%;
 }
 
 .prompt-right {
-    padding: 0 5px;
-    display: table-cell;
+  padding: 0 5px;
+  display: table-cell;
 }
 
 .error-left {
-    display: table-cell;
-    padding: 0 5px;
-    color: rgb(195, 57, 66);
+  display: table-cell;
+  padding: 0 5px;
+  color: rgb(195, 57, 66);
 }
 
 .error-message {
-    display: table-cell;
-    width: 100%;
-    color: rgb(195, 57, 66);
+  display: table-cell;
+  width: 100%;
+  color: rgb(195, 57, 66);
 }
 
 .error-right {
-    padding: 0 5px;
-    display: table-cell;
+  padding: 0 5px;
+  display: table-cell;
 }
 
 .warning-left {
-    display: table-cell;
-    padding: 0 5px;
+  display: table-cell;
+  padding: 0 5px;
 }
 
 .warning-message {
-    display: table-cell;
-    width: 100%;
+  display: table-cell;
+  width: 100%;
 }
 
 .warning-right {
-    padding: 0 5px;
-    display: table-cell;
+  padding: 0 5px;
+  display: table-cell;
 }
 
 .regular-left {
-    display: table-cell;
-    padding: 0 5px;
+  display: table-cell;
+  color: rgb(256, 256, 256);
+  padding: 0 5px;
 }
 
 .regular-message {
-    display: table-cell;
-    width: 100%;
+  display: table-cell;
+  width: 100%;
 }
 
 .regular-right {
-    padding: 0 5px;
-    display: table-cell;
+  padding: 0 5px;
+  display: table-cell;
 }
 
+.message {
+  border-top: 1px solid rgb(240, 240, 240);
+  padding: 2px 0;
+}
 
+.prompt {
+  border-top: 1px solid rgb(240, 240, 240);
+  padding: 2px 0;
+}

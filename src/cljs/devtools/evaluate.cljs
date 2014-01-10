@@ -25,14 +25,15 @@
     ch))
 
 (defn evaluate-expression-in-inspected-window
-  "Returns the result from the eval function or information about the exception
-  that occurred."
+  "Returns a channel with the result from the eval function or information
+  about the exception that occurred."
   [expression]
   (let [ch (chan)]
     (js/chrome.devtools.inspectedWindow.eval expression
-      (fn [result is-exception]
-
-        (put! ch result)))
+      (fn [result exception]
+        (if exception
+          (put! ch (error-message (.-value exception)))
+          (put! ch (regular-message result)))))
     ch))
 
 (defn format-expression-for-himera
@@ -55,4 +56,4 @@
           (do ;; Expression successfully compiled
             (go (let [result (<! (evaluate-expression-in-inspected-window
                                    (get-himera-response-javascript (.-text response))))]
-                 (put! history-messages (regular-message result)))))))))
+                 (put! history-messages result))))))))

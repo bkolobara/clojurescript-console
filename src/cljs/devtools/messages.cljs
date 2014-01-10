@@ -5,12 +5,14 @@
 
 (defn error-message
   [text]
-  (Message. :error text))
+  (Message. :error (str text)))
 
 (defn warrning-message
   [text]
-  (Message. :warning text))
+  (Message. :warning (str text)))
 
 (defn regular-message
   [text]
-  (Message. :regular text))
+  (cond
+    (undefined? text) (Message. :regular "undefined")
+    :else (Message. :regular (str text))))
