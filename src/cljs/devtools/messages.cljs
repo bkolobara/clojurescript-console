@@ -16,3 +16,7 @@
   (cond
     (undefined? text) (Message. :regular "undefined")
     :else (Message. :regular (str text))))
+
+(defn old-expression-message
+  [text]
+  (Message. :old-expression (str text)))

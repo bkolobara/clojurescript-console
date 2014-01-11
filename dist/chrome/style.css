@@ -103,6 +103,23 @@ body {
   display: table-cell;
 }
 
+.old-expression-left {
+  display: table-cell;
+  color: rgb(140, 140, 140);
+  padding: 0 5px;
+}
+
+.old-expression-message {
+  display: table-cell;
+  color: rgb(17, 85, 204);
+  width: 100%;
+}
+
+.old-expression-right {
+  padding: 0 5px;
+  display: table-cell;
+}
+
 .message {
   border-top: 1px solid rgb(240, 240, 240);
   padding: 2px 0;

@@ -16625,6 +16625,9 @@ messages.warrning_message = function(a) {
 messages.regular_message = function(a) {
   return void 0 === a ? new messages.Message(new cljs.core.Keyword(null, "regular", "regular", 2100368142), "undefined") : new cljs.core.Keyword(null, "else", "else", 1017020587) ? new messages.Message(new cljs.core.Keyword(null, "regular", "regular", 2100368142), "" + cljs.core.str(a)) : null;
 };
+messages.old_expression_message = function(a) {
+  return new messages.Message(new cljs.core.Keyword(null, "old-expression", "old-expression", 2373170544), "" + cljs.core.str(a));
+};
 cljs.core.async = {};
 cljs.core.async.impl = {};
 cljs.core.async.impl.protocols = {};
@@ -24023,6 +24026,7 @@ evaluate.get_himera_response_javascript = function(a) {
   return(new cljs.core.Keyword(null, "js", "js", 1013907643)).cljs$core$IFn$_invoke$arity$1(cljs.reader.read_string.call(null, a));
 };
 evaluate.compile_evaluate_expression = function(a) {
+  cljs.core.async.put_BANG_.call(null, evaluate.history_messages, messages.old_expression_message.call(null, a));
   var b = cljs.core.async.chan.call(null, 1);
   cljs.core.async.impl.dispatch.run.call(null, function() {
     var c = function() {
@@ -24313,92 +24317,113 @@ core.command_history = cljs.core.atom.call(null, cljs.core.List.EMPTY);
 core.COMMAND_HISTORY_STARTING_POSITION = -1;
 core.command_history_position = cljs.core.atom.call(null, core.COMMAND_HISTORY_STARTING_POSITION);
 core.error_message = function error_message$$0(b) {
-  "undefined" === typeof core.t16393 && (core.t16393 = function(b, d, e) {
+  "undefined" === typeof core.t9234 && (core.t9234 = function(b, d, e) {
     this.text = b;
     this.error_message = d;
-    this.meta16394 = e;
+    this.meta9235 = e;
     this.cljs$lang$protocol_mask$partition1$ = 0;
     this.cljs$lang$protocol_mask$partition0$ = 393216;
-  }, core.t16393.cljs$lang$type = !0, core.t16393.cljs$lang$ctorStr = "core/t16393", core.t16393.cljs$lang$ctorPrWriter = function(b, d, e) {
-    return cljs.core._write.call(null, d, "core/t16393");
-  }, core.t16393.prototype.om$core$IRender$ = !0, core.t16393.prototype.om$core$IRender$render$arity$1 = function(b) {
+  }, core.t9234.cljs$lang$type = !0, core.t9234.cljs$lang$ctorStr = "core/t9234", core.t9234.cljs$lang$ctorPrWriter = function(b, d, e) {
+    return cljs.core._write.call(null, d, "core/t9234");
+  }, core.t9234.prototype.om$core$IRender$ = !0, core.t9234.prototype.om$core$IRender$render$arity$1 = function(b) {
     return React.DOM.div({className:"message"}, React.DOM.div({className:"error-left"}, React.DOM.span({className:"icon-cancel-circle"})), React.DOM.div({className:"error-message"}, this.text), React.DOM.div({className:"error-right"}, ""));
-  }, core.t16393.prototype.cljs$core$IMeta$_meta$arity$1 = function(b) {
-    return this.meta16394;
-  }, core.t16393.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(b, d) {
-    return new core.t16393(this.text, this.error_message, d);
-  }, core.__GT_t16393 = function(b, d, e) {
-    return new core.t16393(b, d, e);
+  }, core.t9234.prototype.cljs$core$IMeta$_meta$arity$1 = function(b) {
+    return this.meta9235;
+  }, core.t9234.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(b, d) {
+    return new core.t9234(this.text, this.error_message, d);
+  }, core.__GT_t9234 = function(b, d, e) {
+    return new core.t9234(b, d, e);
   });
-  return new core.t16393(b, error_message$$0, null);
+  return new core.t9234(b, error_message$$0, null);
 };
 core.warning_message = function warning_message(b) {
-  "undefined" === typeof core.t16399 && (core.t16399 = function(b, d, e) {
+  "undefined" === typeof core.t9240 && (core.t9240 = function(b, d, e) {
     this.text = b;
     this.warning_message = d;
-    this.meta16400 = e;
+    this.meta9241 = e;
     this.cljs$lang$protocol_mask$partition1$ = 0;
     this.cljs$lang$protocol_mask$partition0$ = 393216;
-  }, core.t16399.cljs$lang$type = !0, core.t16399.cljs$lang$ctorStr = "core/t16399", core.t16399.cljs$lang$ctorPrWriter = function(b, d, e) {
-    return cljs.core._write.call(null, d, "core/t16399");
-  }, core.t16399.prototype.om$core$IRender$ = !0, core.t16399.prototype.om$core$IRender$render$arity$1 = function(b) {
+  }, core.t9240.cljs$lang$type = !0, core.t9240.cljs$lang$ctorStr = "core/t9240", core.t9240.cljs$lang$ctorPrWriter = function(b, d, e) {
+    return cljs.core._write.call(null, d, "core/t9240");
+  }, core.t9240.prototype.om$core$IRender$ = !0, core.t9240.prototype.om$core$IRender$render$arity$1 = function(b) {
     return React.DOM.div({className:"message"}, React.DOM.div({className:"warning-left"}, React.DOM.span({className:"icon-notification"})), React.DOM.div({className:"error-message"}, this.text), React.DOM.div({className:"warning-right"}, ""));
-  }, core.t16399.prototype.cljs$core$IMeta$_meta$arity$1 = function(b) {
-    return this.meta16400;
-  }, core.t16399.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(b, d) {
-    return new core.t16399(this.text, this.warning_message, d);
-  }, core.__GT_t16399 = function(b, d, e) {
-    return new core.t16399(b, d, e);
+  }, core.t9240.prototype.cljs$core$IMeta$_meta$arity$1 = function(b) {
+    return this.meta9241;
+  }, core.t9240.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(b, d) {
+    return new core.t9240(this.text, this.warning_message, d);
+  }, core.__GT_t9240 = function(b, d, e) {
+    return new core.t9240(b, d, e);
   });
-  return new core.t16399(b, warning_message, null);
+  return new core.t9240(b, warning_message, null);
 };
 core.regular_message = function regular_message$$0(b) {
-  "undefined" === typeof core.t16405 && (core.t16405 = function(b, d, e) {
+  "undefined" === typeof core.t9246 && (core.t9246 = function(b, d, e) {
     this.text = b;
     this.regular_message = d;
-    this.meta16406 = e;
+    this.meta9247 = e;
     this.cljs$lang$protocol_mask$partition1$ = 0;
     this.cljs$lang$protocol_mask$partition0$ = 393216;
-  }, core.t16405.cljs$lang$type = !0, core.t16405.cljs$lang$ctorStr = "core/t16405", core.t16405.cljs$lang$ctorPrWriter = function(b, d, e) {
-    return cljs.core._write.call(null, d, "core/t16405");
-  }, core.t16405.prototype.om$core$IRender$ = !0, core.t16405.prototype.om$core$IRender$render$arity$1 = function(b) {
+  }, core.t9246.cljs$lang$type = !0, core.t9246.cljs$lang$ctorStr = "core/t9246", core.t9246.cljs$lang$ctorPrWriter = function(b, d, e) {
+    return cljs.core._write.call(null, d, "core/t9246");
+  }, core.t9246.prototype.om$core$IRender$ = !0, core.t9246.prototype.om$core$IRender$render$arity$1 = function(b) {
     return React.DOM.div({className:"message"}, React.DOM.div({className:"regular-left"}, React.DOM.span({className:"icon-info"})), React.DOM.div({className:"regular-message"}, this.text), React.DOM.div({className:"regular-right"}, ""));
-  }, core.t16405.prototype.cljs$core$IMeta$_meta$arity$1 = function(b) {
-    return this.meta16406;
-  }, core.t16405.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(b, d) {
-    return new core.t16405(this.text, this.regular_message, d);
-  }, core.__GT_t16405 = function(b, d, e) {
-    return new core.t16405(b, d, e);
+  }, core.t9246.prototype.cljs$core$IMeta$_meta$arity$1 = function(b) {
+    return this.meta9247;
+  }, core.t9246.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(b, d) {
+    return new core.t9246(this.text, this.regular_message, d);
+  }, core.__GT_t9246 = function(b, d, e) {
+    return new core.t9246(b, d, e);
   });
-  return new core.t16405(b, regular_message$$0, null);
+  return new core.t9246(b, regular_message$$0, null);
+};
+core.old_expression_message = function old_expression_message$$0(b) {
+  "undefined" === typeof core.t9252 && (core.t9252 = function(b, d, e) {
+    this.text = b;
+    this.old_expression_message = d;
+    this.meta9253 = e;
+    this.cljs$lang$protocol_mask$partition1$ = 0;
+    this.cljs$lang$protocol_mask$partition0$ = 393216;
+  }, core.t9252.cljs$lang$type = !0, core.t9252.cljs$lang$ctorStr = "core/t9252", core.t9252.cljs$lang$ctorPrWriter = function(b, d, e) {
+    return cljs.core._write.call(null, d, "core/t9252");
+  }, core.t9252.prototype.om$core$IRender$ = !0, core.t9252.prototype.om$core$IRender$render$arity$1 = function(b) {
+    return React.DOM.div({className:"message"}, React.DOM.div({className:"old-expression-left"}, React.DOM.span({className:"icon-arrow-right"})), React.DOM.div({className:"old-expression-message"}, this.text), React.DOM.div({className:"old-expression-right"}, ""));
+  }, core.t9252.prototype.cljs$core$IMeta$_meta$arity$1 = function(b) {
+    return this.meta9253;
+  }, core.t9252.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(b, d) {
+    return new core.t9252(this.text, this.old_expression_message, d);
+  }, core.__GT_t9252 = function(b, d, e) {
+    return new core.t9252(b, d, e);
+  });
+  return new core.t9252(b, old_expression_message$$0, null);
 };
 core.history_message = function(a) {
   var b = cljs.core.seq_QMARK_.call(null, a) ? cljs.core.apply.call(null, cljs.core.hash_map, a) : a;
   a = cljs.core.get.call(null, b, new cljs.core.Keyword(null, "message-text", "message-text", 3976611493));
   b = cljs.core.get.call(null, b, new cljs.core.Keyword(null, "message-type", "message-type", 3976630450));
-  return cljs.core._EQ_.call(null, b, new cljs.core.Keyword(null, "error", "error", 1110689146)) ? core.error_message.call(null, a) : cljs.core._EQ_.call(null, b, new cljs.core.Keyword(null, "warning", "warning", 2138350350)) ? core.warning_message.call(null, a) : new cljs.core.Keyword(null, "else", "else", 1017020587) ? core.regular_message.call(null, a) : null;
+  return cljs.core._EQ_.call(null, b, new cljs.core.Keyword(null, "error", "error", 1110689146)) ? core.error_message.call(null, a) : cljs.core._EQ_.call(null, b, new cljs.core.Keyword(null, "warning", "warning", 2138350350)) ? core.warning_message.call(null, a) : cljs.core._EQ_.call(null, b, new cljs.core.Keyword(null, "old-expression", "old-expression", 2373170544)) ? core.old_expression_message.call(null, a) : new cljs.core.Keyword(null, "else", "else", 1017020587) ? core.regular_message.call(null, 
+  a) : null;
 };
 core.history = function(a) {
   var b = cljs.core.seq_QMARK_.call(null, a) ? cljs.core.apply.call(null, cljs.core.hash_map, a) : a, c = cljs.core.get.call(null, b, new cljs.core.Keyword(null, "history", "history", 1940838406));
-  "undefined" === typeof core.t16417 && (core.t16417 = function(a, b, c, g) {
-    this.map__16416 = a;
-    this.p__16411 = b;
+  "undefined" === typeof core.t9264 && (core.t9264 = function(a, b, c, g) {
+    this.map__9263 = a;
+    this.p__9258 = b;
     this.history = c;
-    this.meta16418 = g;
+    this.meta9265 = g;
     this.cljs$lang$protocol_mask$partition1$ = 0;
     this.cljs$lang$protocol_mask$partition0$ = 393216;
-  }, core.t16417.cljs$lang$type = !0, core.t16417.cljs$lang$ctorStr = "core/t16417", core.t16417.cljs$lang$ctorPrWriter = function(a, b, c) {
-    return cljs.core._write.call(null, b, "core/t16417");
-  }, core.t16417.prototype.om$core$IRender$ = !0, core.t16417.prototype.om$core$IRender$render$arity$1 = function(a) {
+  }, core.t9264.cljs$lang$type = !0, core.t9264.cljs$lang$ctorStr = "core/t9264", core.t9264.cljs$lang$ctorPrWriter = function(a, b, c) {
+    return cljs.core._write.call(null, b, "core/t9264");
+  }, core.t9264.prototype.om$core$IRender$ = !0, core.t9264.prototype.om$core$IRender$render$arity$1 = function(a) {
     return React.DOM.div({className:"history"}, om.core.build_all.call(null, core.history_message, this.history));
-  }, core.t16417.prototype.cljs$core$IMeta$_meta$arity$1 = function(a) {
-    return this.meta16418;
-  }, core.t16417.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(a, b) {
-    return new core.t16417(this.map__16416, this.p__16411, this.history, b);
-  }, core.__GT_t16417 = function(a, b, c, g) {
-    return new core.t16417(a, b, c, g);
+  }, core.t9264.prototype.cljs$core$IMeta$_meta$arity$1 = function(a) {
+    return this.meta9265;
+  }, core.t9264.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(a, b) {
+    return new core.t9264(this.map__9263, this.p__9258, this.history, b);
+  }, core.__GT_t9264 = function(a, b, c, g) {
+    return new core.t9264(a, b, c, g);
   });
-  return new core.t16417(b, a, c, null);
+  return new core.t9264(b, a, c, null);
 };
 core.handle_prompt_keydown = function(a, b, c) {
   b = om.core.get_node.call(null, b, "expression");
@@ -24428,22 +24453,22 @@ core.handle_refocus_prompt = function(a, b) {
   return!1;
 };
 core.console = function console__$1(b, c, d) {
-  "undefined" === typeof core.t16460 && (core.t16460 = function(b, c, d, h, l) {
+  "undefined" === typeof core.t9307 && (core.t9307 = function(b, c, d, h, l) {
     this.opts = b;
     this.owner = c;
     this.app = d;
     this.console = h;
-    this.meta16461 = l;
+    this.meta9308 = l;
     this.cljs$lang$protocol_mask$partition1$ = 0;
     this.cljs$lang$protocol_mask$partition0$ = 393216;
-  }, core.t16460.cljs$lang$type = !0, core.t16460.cljs$lang$ctorStr = "core/t16460", core.t16460.cljs$lang$ctorPrWriter = function(b, c, d) {
-    return cljs.core._write.call(null, c, "core/t16460");
-  }, core.t16460.prototype.om$core$IRender$ = !0, core.t16460.prototype.om$core$IRender$render$arity$1 = function(b) {
+  }, core.t9307.cljs$lang$type = !0, core.t9307.cljs$lang$ctorStr = "core/t9307", core.t9307.cljs$lang$ctorPrWriter = function(b, c, d) {
+    return cljs.core._write.call(null, c, "core/t9307");
+  }, core.t9307.prototype.om$core$IRender$ = !0, core.t9307.prototype.om$core$IRender$render$arity$1 = function(b) {
     var c = this;
     return React.DOM.div({onClick:function(b) {
       return core.handle_refocus_prompt.call(null, b, c.owner);
     }, className:"console-element"}, om.core.build.call(null, core.history, c.app), core.prompt.call(null, c.app, c.owner));
-  }, core.t16460.prototype.om$core$IWillMount$ = !0, core.t16460.prototype.om$core$IWillMount$will_mount$arity$1 = function(b) {
+  }, core.t9307.prototype.om$core$IWillMount$ = !0, core.t9307.prototype.om$core$IWillMount$will_mount$arity$1 = function(b) {
     var c = this, d = cljs.core.async.chan.call(null, 1);
     cljs.core.async.impl.dispatch.run.call(null, function() {
       var b = function() {
@@ -24504,18 +24529,18 @@ core.console = function console__$1(b, c, d) {
       return cljs.core.async.impl.ioc_helpers.run_state_machine_wrapped.call(null, e);
     });
     return d;
-  }, core.t16460.prototype.om$core$IInitState$ = !0, core.t16460.prototype.om$core$IInitState$init_state$arity$1 = function(b) {
+  }, core.t9307.prototype.om$core$IInitState$ = !0, core.t9307.prototype.om$core$IInitState$init_state$arity$1 = function(b) {
     return om.core.transact_BANG_.call(null, this.app, new cljs.core.Keyword(null, "history", "history", 1940838406), function() {
       return cljs.core.PersistentVector.EMPTY;
     });
-  }, core.t16460.prototype.cljs$core$IMeta$_meta$arity$1 = function(b) {
-    return this.meta16461;
-  }, core.t16460.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(b, c) {
-    return new core.t16460(this.opts, this.owner, this.app, this.console, c);
-  }, core.__GT_t16460 = function(b, c, d, h, l) {
-    return new core.t16460(b, c, d, h, l);
+  }, core.t9307.prototype.cljs$core$IMeta$_meta$arity$1 = function(b) {
+    return this.meta9308;
+  }, core.t9307.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(b, c) {
+    return new core.t9307(this.opts, this.owner, this.app, this.console, c);
+  }, core.__GT_t9307 = function(b, c, d, h, l) {
+    return new core.t9307(b, c, d, h, l);
   });
-  return new core.t16460(d, c, b, console__$1, null);
+  return new core.t9307(d, c, b, console__$1, null);
 };
 core.initialize = function(a) {
   return a.onShown.addListener(function(a) {

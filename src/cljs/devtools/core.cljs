@@ -52,12 +52,23 @@
       (dom/div #js {:className "regular-message"} text)
       (dom/div #js {:className "regular-right"} ""))))
 
+(defn old-expression-message
+  "Om component representing a old command message."
+  [text]
+  (om/component
+    (dom/div #js {:className "message"}
+      (dom/div #js {:className "old-expression-left"}
+        (dom/span #js {:className "icon-arrow-right"}))
+      (dom/div #js {:className "old-expression-message"} text)
+      (dom/div #js {:className "old-expression-right"} ""))))
+
 (defn history-message
   "Om component representing a message stored in history."
   [{:keys [message-type message-text]}]
   (cond
     (= message-type :error) (error-message message-text)
     (= message-type :warning) (warning-message message-text)
+    (= message-type :old-expression) (old-expression-message message-text)
     :else (regular-message message-text)))
 
 
@@ -70,7 +81,7 @@
 
 
 (defn handle-prompt-keydown
-  "Function that handles submit on enter and history travel"
+  "Function that handles submit on enter and history travel on up and down keys."
   [event owner app]
   (let [prompt-node (om/get-node owner "expression")
         expression (.. prompt-node -value trim)]

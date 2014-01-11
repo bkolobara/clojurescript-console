@@ -2,7 +2,8 @@
   (:require-macros [cljs.core.async.macros :refer [go]])
   (:require [cljs.reader :as reader]
             [cljs.core.async :refer [put! <! chan close!]]
-            [messages :refer [regular-message warning-message error-message]]))
+            [messages :refer [regular-message warning-message error-message
+                              old-expression-message]]))
 
 ; Himera compilation server URL
 (def SERVER "http://himera.herokuapp.com/compile")
@@ -47,6 +48,7 @@
   (:js (reader/read-string response)))
 
 (defn compile-evaluate-expression [expression]
+  (put! history-messages (old-expression-message expression)) ; Put expression in history
   (go (let [response (<! (himera-compile SERVER
                                          (format-expression-for-himera expression)))]
         (if (not (= (.-status response) 200))
