@@ -1,4 +1,4 @@
-(defproject cljsconsole "0.0.2"
+(defproject cljsconsole "0.0.3"
   :description "An extension to the Chrome developer tools allowing the evaluation of ClojureScript
                 code directly in the browser."
   :url "https://github.com/bkolobara/clojurescript-console"
@@ -7,8 +7,7 @@
   :dependencies [[org.clojure/clojure "1.5.1"]
                  [org.clojure/clojurescript "0.0-2138"]
                  [org.clojure/core.async "0.1.267.0-0d7780-alpha"]
-                 [om "0.1.5"]
-                 [cljs-http "0.1.2"]]
+                 [om "0.1.5"]]
   :plugins [[lein-cljsbuild "1.0.1"]]
   :cljsbuild {
     :builds [{:source-paths ["src/cljs/devtools"]
